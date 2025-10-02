@@ -13,44 +13,41 @@ import javax.swing.plaf.RootPaneUI;
  */
 public class Calculadora {
 
-    double imc;
-    private String status;
+    private double va;
+    private double vp;
+    private double imc;
+        
 
-    public String Calculadora(double vp, double va) {
-        imc = vp / (va*va) {
-        imc = vp / (va*va);
-
-        if (imc < 17) {
-            this.setStatus("Muito abaixo do peso");
-        } else if (imc <= 18.49) {
-            this.setStatus("Abaixo do peso");
-        } else if (imc <= 24.99) {
-            this.setStatus("Peso normal");
-        } else if (imc <= 29.99) {
-            this.setStatus("Acima do peso");
-        } else if (imc <= 34.99) {
-            this.setStatus("Obesidade I");
-        } else if (imc <= 39.99) {
-            this.setStatus("Obesidade II (severa)");
-        } else if (imc >= 40) {
-            this.setStatus("Obesidade III (mórbida)");
-        }
+    public Calculadora(double va, double vp) {
+        setVa(va);
+        setVp(vp);
+        setImc(vp/(va*va));
     }
 
-    /**
-     * @return the status
-     */
-    public String getStatus() {
-        return status;
+    public double getVa() {
+        return va;
     }
 
-    /**
-     * @param status the status to set
-     */
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
-    
+    public void setVa(double va) {
 
+        this.va  = va;
+    }
+
+    public double getVp() {
+        return vp;
+    }
+
+    public void setVp(double vp) {
+
+        this.vp = vp;
+    }
+
+    public double getImc() {
+        return imc;
+    }
+
+    public void setImc(double imc) {
+
+        this.imc = imc;
+    }
 }

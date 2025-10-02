@@ -4,6 +4,8 @@
  */
 package com.mycompany.imc;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mauricio.freitas1
@@ -94,13 +96,21 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCalcularActionPerformed
-        Double vp = Double.parseDouble(jTPeso.getText());
-        Double va = Double.parseDouble(jTAltura.getText());
-                
-        Calculadora calc = new Calculadora();
-        
-        
-        
+
+        try {
+
+            double va  = Double.parseDouble(jTAltura.getText());
+            double vp = Double.parseDouble(jTPeso.getText());
+            
+            Calculadora calc = new Calculadora(va, vp);
+
+            Resultado r = new Resultado();
+            r.setVisible(true);
+            r.setLocationRelativeTo(this);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Preencha os valores corretamente!");
+        }
     }//GEN-LAST:event_jBCalcularActionPerformed
 
     /**
