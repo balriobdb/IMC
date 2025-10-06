@@ -10,11 +10,21 @@ package com.mycompany.imc;
  */
 public class Resultado extends javax.swing.JFrame {
 
+    
+
     /**
      * Creates new form Resultado
      */
     public Resultado() {
         initComponents();
+    }
+
+    public Resultado(Calculadora calc) {
+        initComponents();
+
+       
+        jLImc.setText(String.valueOf(calc.getImc()));
+        jLStatus.setText(calc.getStatus());
     }
 
     /**

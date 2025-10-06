@@ -104,7 +104,7 @@ public class Principal extends javax.swing.JFrame {
             
             Calculadora calc = new Calculadora(va, vp);
 
-            Resultado r = new Resultado();
+            Resultado r = new Resultado(calc);
             r.setVisible(true);
             r.setLocationRelativeTo(this);
 
